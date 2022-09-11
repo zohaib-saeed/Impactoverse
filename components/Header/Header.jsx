@@ -492,7 +492,7 @@ const Header = () => {
             >
               <Grid container spacing={1}>
                 {Logo_Content.map((item, index) => (
-                  <Grid item xs={6} md={3}>
+                  <Grid item xs={6} md={3} key={index}>
                     <Box
                       sx={{
                         display: "flex",
@@ -533,6 +533,7 @@ const Header = () => {
                 },
                 mt: { xs: 6, md: 8 },
               }}
+              key={index}
             >
               <Grid container spacing={1} id="homepage_links">
                 {Bottom_Links.map((item, index) => (
