@@ -537,7 +537,7 @@ const Header = () => {
             >
               <Grid container spacing={1} id="homepage_links">
                 {Bottom_Links.map((item, index) => (
-                  <Grid item xs={6} sm={4} md={3}>
+                  <Grid item xs={6} sm={4} md={3} key={index}>
                     <Link href={item.link}>
                       <AnchorLink>
                         <Typography
