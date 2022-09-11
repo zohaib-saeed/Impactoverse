@@ -1,0 +1,81 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-family: "Sora", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+#Hero {
+  background-image: url("/assets/pictures/Hero.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  background-position: center;
+  background-color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  #Hero {
+    background-image: url("/assets/pictures/Hero_Bgwhite.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100%;
+    background-position: center;
+    background-color: white;
+  }
+}
+
+/* Grid Styling */
+
+#showcase .MuiGrid-root {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row;
+}
+
+/* Homepage  */
+
+#homepage_links {
+  display: flex;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  flex-direction: row;
+}
+
+#homepage_linksItem .MuiGrid-item {
+  padding-left: 24px;
+}
+
+/* Folder Section */
+
+@media screen and (min-width: 900px) {
+  #folder {
+    background-image: url("/assets/pictures/folder_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100%;
+    background-position: center;
+  }
+}
+
+/* Footer Section */
+#footer_gridItem .MuiGrid-root {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 900px) {
+  /* #footer_gridItem .MuiGrid-root {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  } */
+}
