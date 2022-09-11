@@ -85,7 +85,7 @@ const Counter = () => {
         >
           <Grid container spacing={2}>
             {Counter_Data.map((item, index) => (
-              <Grid item md={3} xs={6}>
+              <Grid item md={3} xs={6} key={index}>
                 <Box
                   sx={{
                     display: "flex",

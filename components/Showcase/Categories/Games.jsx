@@ -69,7 +69,7 @@ const Photography = () => {
     >
       <Grid container spacing={4}>
         {Showcase_Content.map((item, index) => (
-          <Grid item md={4} lg={3} xl={2}>
+          <Grid item md={4} lg={3} xl={2} key={index}>
             <Box
               sx={{
                 display: "flex",
