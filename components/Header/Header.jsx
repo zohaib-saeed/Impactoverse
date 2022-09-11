@@ -39,7 +39,7 @@ const Header = () => {
       id="Hero"
       sx={{
         width: "100%",
-        height: { xs: "100vh", md: "120vh" },
+        height: { xs: "130vh", md: "130vh" },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
