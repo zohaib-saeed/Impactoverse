@@ -533,7 +533,6 @@ const Header = () => {
                 },
                 mt: { xs: 6, md: 8 },
               }}
-              key={index}
             >
               <Grid container spacing={1} id="homepage_links">
                 {Bottom_Links.map((item, index) => (
