@@ -203,6 +203,7 @@ const FinalCampaign = () => {
           <Slider {...settings} ref={(c) => (slider_ref.current = c)}>
             {Campaign_Content.map((item, index) => (
               <Box
+                key={index}
                 sx={{
                   display: "flex",
                   transition: "all 0.3s ease",

@@ -447,7 +447,7 @@ const Footer = () => {
                       px: { xs: 0, sm: 0.4 },
                     }}
                   >
-                    Sign in
+                    <Fade right>Sign in</Fade>
                   </Button>
                 </Box>
               </Box>
