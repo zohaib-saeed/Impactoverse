@@ -4,6 +4,7 @@ import AnchorLink from "@mui/material/Link";
 import Link from "next/link";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
+import Fade from "react-reveal/Fade";
 
 const Footer = () => {
   //Social Icons data
@@ -61,50 +62,52 @@ const Footer = () => {
                 }}
               >
                 {/* => Card Top */}
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
+                <Fade bottom>
                   <Box
                     sx={{
                       display: "flex",
-                      justifyContent: "center",
+                      flexDirection: "row",
+                      justifyContent: "flex-start",
                       alignItems: "center",
-                      position: "relative",
-                      transition: "all  0.3s ease",
-                      width: "26px",
-                      height: "26px",
                     }}
                   >
-                    <Image
-                      src="/assets/pictures/footer_decor.svg"
-                      layout="fill"
-                      objectFit="contain"
-                    />
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "relative",
+                        transition: "all  0.3s ease",
+                        width: "26px",
+                        height: "26px",
+                      }}
+                    >
+                      <Image
+                        src="/assets/pictures/footer_decor.svg"
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "relative",
+                        transition: "all  0.3s ease",
+                        width: "112px",
+                        height: "16px",
+                        ml: 0.6,
+                      }}
+                    >
+                      <Image
+                        src="/assets/pictures/logo.svg"
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </Box>
                   </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      position: "relative",
-                      transition: "all  0.3s ease",
-                      width: "112px",
-                      height: "16px",
-                      ml: 0.6,
-                    }}
-                  >
-                    <Image
-                      src="/assets/pictures/logo.svg"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </Box>
-                </Box>
+                </Fade>
                 {/* => Card Bottom */}
                 <Box
                   sx={{
@@ -371,9 +374,11 @@ const Footer = () => {
                     maxWidth: { xs: "400px", md: "100%" },
                   }}
                 >
-                  Nibh volutpat, aliquam id sagittis elementum. Pellentesque
-                  laoreet velit, sed egestas in. Id nam semper dolor tellus
-                  vulputate eget turpis.
+                  <Fade bottom>
+                    Nibh volutpat, aliquam id sagittis elementum. Pellentesque
+                    laoreet velit, sed egestas in. Id nam semper dolor tellus
+                    vulputate eget turpis.
+                  </Fade>
                 </Typography>
                 <Box
                   sx={{

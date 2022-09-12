@@ -3,6 +3,7 @@ import { Box, Container, Button, Typography } from "@mui/material";
 import CountUp from "react-countup";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
+import Fade from "react-reveal/Fade";
 
 const Counter = () => {
   //Counter data

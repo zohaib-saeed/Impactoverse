@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Container, Button, Typography } from "@mui/material";
+import Fade from "react-reveal/Fade";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
@@ -102,101 +103,106 @@ const Header = () => {
               }}
             >
               {/* => Heading Top  */}
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: "Sora",
-                    fontSize: {
-                      xs: "35px",
-                      xm: "50px",
-                      sm: "70px",
-                      md: "90px",
-                    },
-                    fontWeight: { xs: "700", lg: "600" },
-                    fontStyle: "normal",
-                    lineHeight: "100%",
-                    letterSpacing: "0.2px",
-                    color: "#060714",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  A new NFT
-                </Typography>
+              <Fade left>
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: { xs: "18px", md: "25px", lg: "40px" },
-                    height: { xs: "32px", md: "50px", lg: "80px" },
-                    position: "relative",
-                    transition: "all  0.3s ease",
                   }}
                 >
-                  <Image
-                    src="/assets/pictures/Header_text_decor1.svg"
-                    layout="fill"
-                    objectFit="contain"
-                    priority
-                  />
+                  <Typography
+                    sx={{
+                      fontFamily: "Sora",
+                      fontSize: {
+                        xs: "35px",
+                        xm: "50px",
+                        sm: "70px",
+                        md: "90px",
+                      },
+                      fontWeight: { xs: "700", lg: "600" },
+                      fontStyle: "normal",
+                      lineHeight: "100%",
+                      letterSpacing: "0.2px",
+                      color: "#060714",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    A new NFT
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: { xs: "18px", md: "25px", lg: "40px" },
+                      height: { xs: "32px", md: "50px", lg: "80px" },
+                      position: "relative",
+                      transition: "all  0.3s ease",
+                    }}
+                  >
+                    <Image
+                      src="/assets/pictures/Header_text_decor1.svg"
+                      layout="fill"
+                      objectFit="contain"
+                      priority
+                    />
+                  </Box>
                 </Box>
-              </Box>
+              </Fade>
               {/* => Heading Bottom */}
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  ml: { xs: 3, xm: 6, md: 12 },
-                }}
-              >
+              <Fade right>
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: { xs: "22px", md: "36px", lg: "62px" },
-                    height: { xs: "22px", md: "36px", lg: "62px" },
-                    position: "relative",
-                    transition: "all  0.3s ease",
+                    ml: { xs: 3, xm: 6, md: 12 },
                   }}
                 >
-                  <Image
-                    src="/assets/pictures/Header_text_decor2.svg"
-                    layout="fill"
-                    objectFit="contain"
-                    priority
-                  />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: { xs: "22px", md: "36px", lg: "62px" },
+                      height: { xs: "22px", md: "36px", lg: "62px" },
+                      position: "relative",
+                      transition: "all  0.3s ease",
+                    }}
+                  >
+                    <Image
+                      src="/assets/pictures/Header_text_decor2.svg"
+                      layout="fill"
+                      objectFit="contain"
+                      priority
+                    />
+                  </Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "Sora",
+                      fontSize: {
+                        xs: "35px",
+                        xm: "50px",
+                        sm: "70px",
+                        md: "90px",
+                      },
+                      fontWeight: { xs: "700", lg: "600" },
+                      fontStyle: "normal",
+                      lineHeight: "100%",
+                      letterSpacing: "0.2px",
+                      color: "#060714",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    Experience
+                  </Typography>
                 </Box>
-                <Typography
-                  sx={{
-                    fontFamily: "Sora",
-                    fontSize: {
-                      xs: "35px",
-                      xm: "50px",
-                      sm: "70px",
-                      md: "90px",
-                    },
-                    fontWeight: { xs: "700", lg: "600" },
-                    fontStyle: "normal",
-                    lineHeight: "100%",
-                    letterSpacing: "0.2px",
-                    color: "#060714",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  Experience
-                </Typography>
-              </Box>
+              </Fade>
             </Box>
 
             {/* Main Content Text => Paragraph */}
+
             <Typography
               sx={{
                 fontFamily: "Inter",
@@ -484,6 +490,7 @@ const Header = () => {
           >
             {/* Mapping all logo's*/}
             <Box
+              id="header_logos"
               sx={{
                 display: "flex",
                 justifyContent: "center",

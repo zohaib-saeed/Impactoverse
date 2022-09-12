@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Box, Container, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Fade from "react-reveal/Fade";
 
 const Folder = () => {
   return (
@@ -71,7 +72,10 @@ const Folder = () => {
                 mt: 2,
               }}
             >
-              Get involved. Make a difference. Join the Impactoverse community.
+              <Fade left>
+                Get involved. Make a difference. Join the Impactoverse
+                community.
+              </Fade>
             </Typography>
           </Box>
           <Typography
@@ -86,8 +90,10 @@ const Folder = () => {
               mt: { xs: 1.5, md: 3 },
             }}
           >
-            Donec volutpat bibendum justo, odio aenean congue est porttitor ut.
-            Mauris vestibulum eros libero amet tincidunt.
+            <Fade bottom>
+              Donec volutpat bibendum justo, odio aenean congue est porttitor
+              ut. Mauris vestibulum eros libero amet tincidunt.
+            </Fade>
           </Typography>
           <Box
             sx={{

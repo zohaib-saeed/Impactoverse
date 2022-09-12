@@ -6,23 +6,22 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import IconButton from "@mui/material/IconButton";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Slider from "react-slick";
-// Import css files
+import Fade from "react-reveal/Fade";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const LatestCampaigns = () => {
-  // Slider Function
-  var settings = {
+const FinalCampaign = () => {
+  //Slider
+  const settings = {
     dots: false,
-    infinite: true,
-    autoplay: false,
-    speed: 1000,
+    infinite: false,
+    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -31,31 +30,34 @@ const LatestCampaigns = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 980,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 1,
+
+          infinite: true,
+          dots: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 650,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
+          dots: false,
         },
       },
     ],
   };
 
-  const slider_ref = useRef();
   // User Images for slider cards
   const User_Portraits = [
     { img: "/assets/pictures/portrait/p1.jpg" },
     { img: "/assets/pictures/portrait/p4.jpg" },
     { img: "/assets/pictures/portrait/p5.jpg" },
   ];
-  //Campaign Cards content
+  //Campaign Content
   const Campaign_Content = [
     {
       title: "Vulputate felis purus viverra morbi facilisi eget",
@@ -149,6 +151,8 @@ const LatestCampaigns = () => {
       ],
     },
   ];
+
+  const slider_ref = useRef();
   return (
     <Box
       sx={{
@@ -156,22 +160,24 @@ const LatestCampaigns = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        px: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 3, md: 8 },
+
         py: 8,
         borderRadius: "8px",
         width: "100%",
+        // overflow: "hidden",
       }}
     >
       <Container
         sx={{
-          maxWidth: "lg",
+          // maxWidth: "lg",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
         }}
       >
-        {/*=> Main Heading */}
+        {/* =>  Main Heading */}
         <Typography
           sx={{
             fontFamily: "Sora",
@@ -181,9 +187,10 @@ const LatestCampaigns = () => {
             fontStyle: "normal",
             color: "#060714",
             textTransform: "capitalize",
+            textAlign: "center",
           }}
         >
-          Latest Impact Campaigns
+          <Fade bottom>Latest Impact Campaigns</Fade>
         </Typography>
         {/* => Slider */}
         <Box
@@ -193,16 +200,19 @@ const LatestCampaigns = () => {
             mt: 8,
           }}
         >
-          <Slider ref={(c) => (slider_ref.current = c)} {...settings}>
+          <Slider {...settings} ref={(c) => (slider_ref.current = c)}>
             {Campaign_Content.map((item, index) => (
-              <Box key={index} sx={{ px: 1 }}>
-                {/* => Slider Card */}
+              <Box
+                sx={{
+                  display: "flex",
+                  transition: "all 0.3s ease",
+                }}
+              >
                 <Box
                   sx={{
-                    maxWidth: "300px",
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "flex-start",
+                    alignItems: "center",
                     flexDirection: "column",
                   }}
                 >
@@ -212,8 +222,8 @@ const LatestCampaigns = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      width: "300px",
-                      height: "390px",
+                      width: "270px",
+                      height: "400px",
                       position: "relative",
                       transition: "all  0.3s ease",
                       "& img ": {
@@ -223,6 +233,7 @@ const LatestCampaigns = () => {
                   >
                     <Image
                       src={item.card_image}
+                      alt="nft"
                       layout="fill"
                       objectFit="cover"
                     />
@@ -234,6 +245,7 @@ const LatestCampaigns = () => {
                       justifyContent: "space-between",
                       alignItems: "flex-start",
                       flexDirection: "column",
+                      maxWidth: "270px",
                       py: { xs: 1, md: 2 },
                       borderBottom: "1px solid #E2E2ED",
                     }}
@@ -243,6 +255,7 @@ const LatestCampaigns = () => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "flex-start",
+                        flexDirection: "row",
                       }}
                     >
                       <Typography
@@ -251,11 +264,12 @@ const LatestCampaigns = () => {
                           fontStyle: "normal",
                           fontWeight: "600",
                           textAlign: "left",
-                          fontSize: { xs: "18px", md: "20px", lg: "22px" },
-                          lineHeight: { xs: "23", md: "25px", lg: "27px" },
+                          fontSize: { xs: "15px", md: "16px" },
+                          lineHeight: { xs: "20px", md: "21px" },
                           transition: "all 0.3s ease",
                           color: " #060714",
-                          maxWidth: "80%",
+                          letterSpacing: "0.2px",
+                          mb: { xs: 0.7, md: 1.4 },
                         }}
                       >
                         {`${item.title}`}
@@ -323,6 +337,8 @@ const LatestCampaigns = () => {
                       justifyContent: "center",
                       alignItems: "center",
                       width: "100%",
+                      maxWidth: "270px",
+
                       py: 2,
                     }}
                   >
@@ -339,6 +355,7 @@ const LatestCampaigns = () => {
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "center",
+                          ml: 0.5,
                         }}
                       >
                         {item.User_Portraits.map((user, index) => (
@@ -422,7 +439,7 @@ const LatestCampaigns = () => {
                             color: " #7780A1",
                           }}
                         >
-                          {item.likes}
+                          ${item.likes}
                         </Typography>
                       </Box>
                     </Box>
@@ -434,11 +451,13 @@ const LatestCampaigns = () => {
           <IconButton
             onClick={() => slider_ref.current.slickPrev()}
             sx={{
-              background: "white",
-              width: "70px",
-              height: "70px",
+              border: "1px solid #0000001c",
+
+              background: "#ffffffb0",
+              width: "60px",
+              height: "60px",
               color: "black",
-              "&:hover": { background: "white" },
+              "&:hover": { background: "#ffffffb0" },
               position: "absolute",
               top: "32%",
               left: "-28px",
@@ -449,11 +468,12 @@ const LatestCampaigns = () => {
           <IconButton
             onClick={() => slider_ref.current.slickNext()}
             sx={{
-              background: "white",
-              width: "70px",
-              height: "70px",
+              border: "1px solid #0000001c",
+              background: "#ffffffb0",
+              width: "60px",
+              height: "60px",
               color: "black",
-              "&:hover": { background: "white" },
+              "&:hover": { background: "#ffffffb0" },
               position: "absolute",
               top: "32%",
               right: "-28px",
@@ -493,4 +513,4 @@ const LatestCampaigns = () => {
   );
 };
 
-export default LatestCampaigns;
+export default FinalCampaign;

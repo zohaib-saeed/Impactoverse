@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Box, Container, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Fade from "react-reveal/Fade";
 
 const ImpactCollab = () => {
   return (
@@ -10,7 +11,8 @@ const ImpactCollab = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        px: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 3, md: 8 },
+
         py: { xs: 3, md: 5, lg: 8 },
       }}
     >
@@ -108,7 +110,7 @@ const ImpactCollab = () => {
                   mt: 2,
                 }}
               >
-                Featured Impact Collab
+                <Fade right>Featured Impact Collab</Fade>
               </Typography>
             </Box>
             <Typography
@@ -123,8 +125,10 @@ const ImpactCollab = () => {
                 mt: { xs: 1.5, md: 3 },
               }}
             >
-              Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
-              pulvinar ultricies dolor feugiat aliquam commodo.
+              <Fade bottom>
+                Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
+                pulvinar ultricies dolor feugiat aliquam commodo.
+              </Fade>
             </Typography>
           </Box>
           {/*  Section Right => Bottom part */}
@@ -192,7 +196,7 @@ const ImpactCollab = () => {
                       color: " #060714",
                     }}
                   >
-                    Sollicitudin sapien
+                    <Fade bottom>Sollicitudin sapien</Fade>
                   </Typography>
                   <Typography
                     sx={{
@@ -205,7 +209,7 @@ const ImpactCollab = () => {
                       mt: { xs: 0.3, md: 0.5 },
                     }}
                   >
-                    Cursus fermentum
+                    <Fade bottom>Cursus fermentum</Fade>
                   </Typography>
                 </Box>
               </Box>
@@ -257,7 +261,7 @@ const ImpactCollab = () => {
                       mt: { xs: 0.3, md: 0.5 },
                     }}
                   >
-                    Pulvinar metus
+                    <Fade bottom>Pulvinar metus</Fade>
                   </Typography>
                   <Typography
                     sx={{
@@ -269,7 +273,7 @@ const ImpactCollab = () => {
                       color: "#7780A1",
                     }}
                   >
-                    Nunc sed
+                    <Fade bottom>Nunc sed</Fade>
                   </Typography>
                 </Box>
               </Box>

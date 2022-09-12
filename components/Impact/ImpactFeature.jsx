@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Box, Container, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import Fade from "react-reveal/Fade";
 
 const ImpactFeature = () => {
   return (
@@ -10,7 +11,7 @@ const ImpactFeature = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        px: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 3, md: 8 },
         py: { xs: 3, md: 5, lg: 8 },
       }}
     >
@@ -69,7 +70,7 @@ const ImpactFeature = () => {
                 mt: 2,
               }}
             >
-              Featured Influencer for Impact
+              <Fade left>Featured Influencer for Impact</Fade>
             </Typography>
           </Box>
           <Typography
@@ -84,8 +85,10 @@ const ImpactFeature = () => {
               mt: { xs: 1.5, md: 3 },
             }}
           >
-            Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
-            pulvinar ultricies dolor feugiat aliquam commodo.
+            <Fade bottom>
+              Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
+              pulvinar ultricies dolor feugiat aliquam commodo.
+            </Fade>
           </Typography>
           <Box
             sx={{

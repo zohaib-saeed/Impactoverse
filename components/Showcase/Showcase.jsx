@@ -6,6 +6,7 @@ import Games from "./Categories/Games";
 import Architecture from "./Categories/Architecture";
 import Music from "./Categories/Music";
 import Grid from "@mui/material/Grid";
+import Fade from "react-reveal/Fade";
 
 const Showcase = () => {
   //Showing Categories
@@ -56,7 +57,8 @@ const Showcase = () => {
         alignItems: "center",
         flexDirection: "column",
         transition: "all 0.3s ease",
-        px: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 3, md: 8 },
+
         py: { xs: 3, md: 5, lg: 8 },
       }}
     >
@@ -107,7 +109,7 @@ const Showcase = () => {
               textAlign: "center",
             }}
           >
-            Gallery Showcase
+            <Fade bottom>Gallery Showcase</Fade>
           </Typography>
         </Box>
         {/*=> Catergories */}

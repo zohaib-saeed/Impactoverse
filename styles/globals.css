@@ -71,11 +71,37 @@ a {
   flex-direction: row;
 }
 
-@media screen and (min-width: 900px) {
-  /* #footer_gridItem .MuiGrid-root {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-  } */
+/* Slider 
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+} */
+
+#section_dark__bg {
+  background-image: url("/assets/pictures/dark_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#dark_section .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+#dark_section .MuiGrid-root {
+  display: "flex";
+  justify-content: center;
+  align-items: stretch;
+}
+
+#header_logos .MuiGrid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
