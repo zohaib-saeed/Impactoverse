@@ -1,4 +1,4 @@
-import Header from "../components/Header/Header"
+import Header from "../components/Hero/Hero"
 import ImpactFeature from "../components/Impact/ImpactFeature"
 import ImpactCollab from "../components/Impact/ImpactCollab"
 import Showcase from '../components/Showcase/Showcase'

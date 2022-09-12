@@ -71,20 +71,13 @@ a {
   flex-direction: row;
 }
 
-/* Slider 
-.slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: row;
-} */
-
 #section_dark__bg {
   background-image: url("/assets/pictures/dark_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+/* Dark section slider */
 
 #dark_section .slick-slide {
   display: flex;
@@ -98,6 +91,8 @@ a {
   justify-content: center;
   align-items: stretch;
 }
+
+/* Hero logos  */
 
 #header_logos .MuiGrid-item {
   display: flex;

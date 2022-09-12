@@ -77,7 +77,7 @@ const Photography = () => {
                 alignItems: "center",
                 flexDirection: "column",
                 transition: "all  0.3s ease",
-                width: "212px",
+                width: { xs: "250px", sm: "212px" },
                 mx: 1.5,
                 mt: { xs: 1, md: 0 },
               }}
@@ -88,7 +88,7 @@ const Photography = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  width: "212px",
+                  width: { xs: "250px", sm: "212px" },
                   height: "355px",
                   position: "relative",
                   transition: "all  0.3s ease",
