@@ -67,7 +67,6 @@ const NftGalleryCards = () => {
   const settings = {
     dots: false,
     infinite: false,
-    autoplay: "true",
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -145,6 +144,7 @@ const NftGalleryCards = () => {
                 p: { xs: 1, sm: 2.5 },
                 border: "2px solid #E2E2ED",
                 height: "100%",
+                mt: { xs: 3, sml: 0 },
               }}
             >
               <Typography
@@ -192,6 +192,7 @@ const NftGalleryCards = () => {
                           alignItems: "center",
                           flexDirection: "column",
                           transition: "all  0.3s ease",
+                          width: "212px",
                         }}
                       >
                         {/* => Card Image */}
@@ -439,6 +440,8 @@ const NftGalleryCards = () => {
                 p: { xs: 2, sm: 3 },
                 minHeight: "550px",
                 borderRadius: "12px",
+                mt: { xs: 3, sml: 0 },
+
                 // my: { xs: 1.2, md: 1.7 },
               }}
             >
@@ -536,6 +539,7 @@ const NftGalleryCards = () => {
                 p: { xs: 1, sm: 2.5 },
                 border: "2px solid #E2E2ED",
                 height: "100%",
+                mt: { xs: 3, sml: 0 },
               }}
             >
               <Typography
