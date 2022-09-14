@@ -8,6 +8,7 @@ import Folder from '../components/Folder/Folder'
 import Footer from '../components/Footer/Footer'
 import CampaignSlider from "../components/LatestCampaigns/CampaignSlider"
 import NftGalleryCards from "../components/NftGalleryCards/NftGalleryCards"
+import Table from '../components/Table/Table'
 
 function index() {
   return (
