@@ -45,8 +45,7 @@ const Header = () => {
         alignItems: "center",
         flexDirection: "column",
         px: { xs: 1.5, md: 4 },
-        // py: { xs: 3, md: 5, lg: 8 },
-        pt: { xs: 19, md: 20 },
+        pt: { xs: 19, md: 22 },
         pb: 4,
       }}
     >
@@ -330,6 +329,9 @@ const Header = () => {
                 onClose={handleClose}
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
+                }}
+                sx={{
+                  boxShadow: "none",
                 }}
               >
                 <MenuItem onClick={handleClose}>Photography</MenuItem>
