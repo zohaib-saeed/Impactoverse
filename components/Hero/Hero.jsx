@@ -40,13 +40,14 @@ const Header = () => {
       id="Hero"
       sx={{
         width: "100%",
-        height: { xs: "130vh", md: "130vh" },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
         px: { xs: 1.5, md: 4 },
-        py: { xs: 3, md: 5, lg: 8 },
+        // py: { xs: 3, md: 5, lg: 8 },
+        pt: { xs: 19, md: 20 },
+        pb: 4,
       }}
     >
       <Container
@@ -363,7 +364,7 @@ const Header = () => {
                     fontSize: "14px",
                     lineHeight: "22px",
                     fontWeight: 500,
-                    fontStyle: "italic",
+                    fontStyle: "normal",
                     whiteSpace: "nowrap",
                     color: "#BBC0D0",
                     backgroundColor: "none",
