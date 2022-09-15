@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Container, Button, Typography } from "@mui/material";
 import Fade from "react-reveal/Fade";
 import Menu from "@mui/material/Menu";
@@ -19,6 +19,56 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  //Desktop Menu Handler
+  const [isOpen, setIsOpen] = useState(false);
+  const desktopMenuClickHandler = () => {
+    setIsOpen((state) => !state);
+  };
+
+  const ref = useRef(null);
+
+  function desktopMenuHandler(ref) {
+    useEffect(() => {
+      // Function for click event
+      function handleOutsideClick(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setIsOpen(false);
+        }
+      }
+
+      // Adding click event listener
+      document.addEventListener("click", handleOutsideClick);
+      return () => document.removeEventListener("click", handleOutsideClick);
+    }, [ref]);
+  }
+
+  desktopMenuHandler(ref);
+
+  //Mobile menu handler
+  const [isOpenOnMobile, setIsOpenOnMobile] = useState(false);
+  const mobileMenuClickHandler = () => {
+    setIsOpenOnMobile((state) => !state);
+  };
+
+  const mobRef = useRef(null);
+
+  function mobileMenuHandler(ref) {
+    useEffect(() => {
+      // Function for click event
+      function handleOutsideClick(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setIsOpenOnMobile(false);
+        }
+      }
+
+      // Adding click event listener
+      document.addEventListener("click", handleOutsideClick);
+      return () => document.removeEventListener("click", handleOutsideClick);
+    }, [ref]);
+  }
+
+  mobileMenuHandler(mobRef);
 
   //Logo's
   const Logo_Content = [
@@ -173,6 +223,7 @@ const Header = () => {
                   >
                     <Image
                       src="/assets/pictures/Header_text_decor2.svg"
+                      alt="Image"
                       layout="fill"
                       objectFit="contain"
                       priority
@@ -274,33 +325,96 @@ const Header = () => {
                 placeholder="items, collections and creators"
               />
               {/* search bar => category button */}
-              <Button
-                id="basic-button"
-                aria-controls={open ? "basic-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-                onClick={handleClick}
+              <Box
                 sx={{
-                  textTransform: "capitalize",
-                  fontFamily: "Inter",
-                  fontSize: "14px",
-                  lineHeight: "22px",
-                  fontWeight: 500,
-                  fontStyle: "normal",
-                  whiteSpace: "nowrap",
-                  color: "#BBC0D0",
-                  cursor: "pointer",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  ml: { xs: 0.6, md: 1.4 },
+                  flexDirection: "column",
+                  position: "relative",
                 }}
+                ref={ref}
               >
-                Category
-                <KeyboardArrowDownIcon
-                  sx={{ pl: 1, color: "#BBC0D0", fontSize: "22px", ml: 0.5 }}
-                />
-              </Button>
+                <Button
+                  sx={{
+                    fontFamily: "Inter",
+                    fontSize: "14px",
+                    lineHeight: "22px",
+                    fontWeight: 500,
+                    fontStyle: "normal",
+                    whiteSpace: "nowrap",
+                    color: "#BBC0D0",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    ml: { xs: 0.6, md: 1.4 },
+                    textTransform: "capitalize",
+                  }}
+                  onClick={() => {
+                    desktopMenuClickHandler();
+                  }}
+                >
+                  Category
+                  <KeyboardArrowDownIcon
+                    sx={{ pl: 1, color: "#BBC0D0", fontSize: "22px", ml: 0.5 }}
+                  />
+                </Button>
+                {isOpen && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "stretch",
+                      flexDirection: "column",
+                      boxShadow: "3px 2px 11px -4px rgba(0,0,0,0.66)",
+                      backgroundColor: "#fff",
+                      position: "absolute",
+                      zIndex: 1111,
+
+                      top: "36px",
+                      py: 0.7,
+                      borderRadius: "6px",
+                      "& p": {
+                        textTransform: "capitalize",
+                        fontFamily: "Inter",
+                        fontSize: "14px",
+                        lineHeight: "22px",
+                        fontWeight: 500,
+                        fontStyle: "normal",
+                        whiteSpace: "nowrap",
+                        color: "#BBC0D0",
+                        backgroundColor: "none",
+                        py: 0.7,
+                      },
+                      "& a": {
+                        textDecoration: "none",
+                        px: 1.3,
+
+                        "&:hover": {
+                          backgroundColor: "#f6f7fb",
+                        },
+                      },
+                    }}
+                    onClick={() => {
+                      desktopMenuClickHandler();
+                    }}
+                  >
+                    <AnchorLink href="/">
+                      <Typography>Photography</Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Art </Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Nature</Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Animated</Typography>
+                    </AnchorLink>
+                  </Box>
+                )}
+              </Box>
               {/* Search bar => search button */}
               <Box
                 sx={{
@@ -320,25 +434,6 @@ const Header = () => {
                   priority
                 />
               </Box>
-
-              {/* Search bar => Dropdown Menu */}
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-                sx={{
-                  boxShadow: "none",
-                }}
-              >
-                <MenuItem onClick={handleClose}>Photography</MenuItem>
-                <MenuItem onClick={handleClose}>Art</MenuItem>
-                <MenuItem onClick={handleClose}>Nature</MenuItem>
-                <MenuItem onClick={handleClose}>Animated</MenuItem>
-              </Menu>
             </Box>
             {/* => For Mobile */}
             <Box
@@ -389,33 +484,95 @@ const Header = () => {
 
               <input type="text" placeholder="Search..." />
               {/* search bar => category button */}
-              <Button
-                id="basic-button"
-                aria-controls={open ? "basic-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-                onClick={handleClick}
+              <Box
                 sx={{
-                  textTransform: "capitalize",
-                  fontFamily: "Inter",
-                  fontSize: "14px",
-                  lineHeight: "22px",
-                  fontWeight: 500,
-                  fontStyle: "normal",
-                  whiteSpace: "nowrap",
-                  color: "#BBC0D0",
-                  cursor: "pointer",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  ml: { xs: 0.6, md: 1.4 },
+                  flexDirection: "column",
+                  position: "relative",
                 }}
+                ref={mobRef}
               >
-                Category
-                <KeyboardArrowDownIcon
-                  sx={{ pl: 1, color: "#BBC0D0", fontSize: "22px", ml: 0.5 }}
-                />
-              </Button>
+                <Button
+                  sx={{
+                    fontFamily: "Inter",
+                    fontSize: "14px",
+                    lineHeight: "22px",
+                    fontWeight: 500,
+                    fontStyle: "normal",
+                    whiteSpace: "nowrap",
+                    color: "#BBC0D0",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    ml: { xs: 0.6, md: 1.4 },
+                    textTransform: "capitalize",
+                  }}
+                  onClick={() => {
+                    mobileMenuClickHandler();
+                  }}
+                >
+                  Category
+                  <KeyboardArrowDownIcon
+                    sx={{ pl: 1, color: "#BBC0D0", fontSize: "22px", ml: 0.5 }}
+                  />
+                </Button>
+                {isOpenOnMobile && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "stretch",
+                      flexDirection: "column",
+                      boxShadow: "3px 2px 11px -4px rgba(0,0,0,0.66)",
+                      backgroundColor: "#fff",
+                      position: "absolute",
+                      top: "36px",
+                      py: 0.7,
+                      borderRadius: "6px",
+                      zIndex: 111,
+                      "& p": {
+                        textTransform: "capitalize",
+                        fontFamily: "Inter",
+                        fontSize: "14px",
+                        lineHeight: "22px",
+                        fontWeight: 500,
+                        fontStyle: "normal",
+                        whiteSpace: "nowrap",
+                        color: "#BBC0D0",
+                        backgroundColor: "none",
+                        py: 0.7,
+                      },
+                      "& a": {
+                        textDecoration: "none",
+                        px: 1.3,
+
+                        "&:hover": {
+                          backgroundColor: "#f6f7fb",
+                        },
+                      },
+                    }}
+                    onClick={() => {
+                      mobileMenuClickHandler();
+                    }}
+                  >
+                    <AnchorLink href="/">
+                      <Typography>Photography</Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Art</Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Nature</Typography>
+                    </AnchorLink>
+                    <AnchorLink href="/">
+                      <Typography>Animated</Typography>
+                    </AnchorLink>
+                  </Box>
+                )}
+              </Box>
               {/* Search bar => search button */}
               <Box
                 sx={{
@@ -435,50 +592,6 @@ const Header = () => {
                   priority
                 />
               </Box>
-
-              {/* Search bar => Dropdown Menu */}
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-              >
-                <MenuItem
-                  sx={{
-                    color: " #b8bbc5",
-                  }}
-                  onClick={handleClose}
-                >
-                  Photography
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    color: " #b8bbc5",
-                  }}
-                  onClick={handleClose}
-                >
-                  Art
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    color: " #b8bbc5",
-                  }}
-                  onClick={handleClose}
-                >
-                  Nature
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    color: " #b8bbc5",
-                  }}
-                  onClick={handleClose}
-                >
-                  Animated
-                </MenuItem>
-              </Menu>
             </Box>
           </Box>
           {/* Main Content ==> Logo's + Links */}

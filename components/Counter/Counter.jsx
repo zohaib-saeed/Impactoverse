@@ -110,6 +110,7 @@ const Counter = () => {
                   >
                     <Image
                       src={item.img}
+                      alt="image"
                       layout="fill"
                       objectFit="cover"
                       priority

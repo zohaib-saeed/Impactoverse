@@ -380,6 +380,7 @@ const FinalCampaign = () => {
                           >
                             <Image
                               src={user.img}
+                              alt="image"
                               layout="fill"
                               objectFit="cover"
                               priority
@@ -424,6 +425,7 @@ const FinalCampaign = () => {
                         >
                           <Image
                             src="/assets/pictures/FavoriteIcon.svg"
+                            alt="image"
                             layout="fill"
                             objectFit="contain"
                           />

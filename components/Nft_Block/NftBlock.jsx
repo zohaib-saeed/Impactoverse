@@ -74,7 +74,13 @@ const NftBlock = () => {
                 transition: "all  0.3s ease",
               }}
             >
-              <Image src={item.img} layout="fill" objectFit="cover" priority />
+              <Image
+                src={item.img}
+                alt="image"
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
             </Box>
             <Typography
               sx={{

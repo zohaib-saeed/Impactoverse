@@ -52,6 +52,7 @@ const ImpactCollab = () => {
           >
             <Image
               src="/assets/pictures/collab_impact.jpg"
+              alt="image"
               layout="fill"
               objectFit="contain"
             />
@@ -172,6 +173,7 @@ const ImpactCollab = () => {
                 >
                   <Image
                     src="/assets/pictures/paint_vector.svg"
+                    alt="image"
                     layout="fill"
                     objectFit="contain"
                   />
@@ -236,6 +238,7 @@ const ImpactCollab = () => {
                 >
                   <Image
                     src="/assets/pictures/number_vector.svg"
+                    alt="image"
                     layout="fill"
                     objectFit="contain"
                   />

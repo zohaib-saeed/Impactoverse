@@ -180,6 +180,7 @@ const ImpactFeature = () => {
           >
             <Image
               src="/assets/pictures/influencer_impact.jpg"
+              alt="image"
               layout="fill"
               objectFit="contain"
             />

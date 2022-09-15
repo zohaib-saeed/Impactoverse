@@ -84,6 +84,7 @@ const Footer = () => {
                     >
                       <Image
                         src="/assets/pictures/footer_decor.svg"
+                        alt="image"
                         layout="fill"
                         objectFit="contain"
                       />
@@ -102,6 +103,7 @@ const Footer = () => {
                     >
                       <Image
                         src="/assets/pictures/logo.svg"
+                        alt="image"
                         layout="fill"
                         objectFit="contain"
                       />
@@ -334,6 +336,7 @@ const Footer = () => {
                         >
                           <Image
                             src={item.img}
+                            alt="image"
                             layout="fill"
                             objectFit="contain"
                           />

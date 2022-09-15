@@ -1,4 +1,4 @@
-import Header from "../components/Hero/Hero"
+import Hero from "../components/Hero/Hero"
 import ImpactFeature from "../components/Impact/ImpactFeature"
 import ImpactCollab from "../components/Impact/ImpactCollab"
 import Showcase from '../components/Showcase/Showcase'
@@ -8,11 +8,12 @@ import Folder from '../components/Folder/Folder'
 import Footer from '../components/Footer/Footer'
 import CampaignSlider from "../components/LatestCampaigns/CampaignSlider"
 import NftGalleryCards from "../components/NftGalleryCards/NftGalleryCards"
+import MenuListComposition from "../components/Dropdown/Dropdown"
 
 function index() {
   return (
     <>
-      <Header />
+      <Hero />
       <CampaignSlider />
       <ImpactFeature />
       <NftGalleryCards />
@@ -22,7 +23,9 @@ function index() {
       <NftBlock />
       <Folder />
       <Footer />
+      <MenuListComposition />
     </>
+
   )
 }
 

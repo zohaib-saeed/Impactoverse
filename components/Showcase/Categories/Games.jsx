@@ -96,7 +96,12 @@ const Photography = () => {
                   },
                 }}
               >
-                <Image src={item.card_image} layout="fill" objectFit="cover" />
+                <Image
+                  src={item.card_image}
+                  alt="image"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </Box>
               {/* => Card Title + Eth Btn */}
               <Box
@@ -230,6 +235,7 @@ const Photography = () => {
                 >
                   <Image
                     src="/assets/pictures/FavoriteIcon.svg"
+                    alt="image"
                     layout="fill"
                     objectFit="contain"
                   />

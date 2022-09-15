@@ -349,6 +349,7 @@ const NftGalleryCards = () => {
                           >
                             <Image
                               src="/assets/pictures/FavoriteIcon.svg"
+                              alt="image"
                               layout="fill"
                               objectFit="contain"
                             />
@@ -724,6 +725,7 @@ const NftGalleryCards = () => {
                       >
                         <Image
                           src="/assets/pictures/FavoriteIcon.svg"
+                          alt="image"
                           layout="fill"
                           objectFit="contain"
                         />
