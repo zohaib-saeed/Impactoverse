@@ -28,22 +28,18 @@ const Header = () => {
 
   const ref = useRef(null);
 
-  function desktopMenuHandler(ref) {
-    useEffect(() => {
-      // Function for click event
-      function handleOutsideClick(event) {
-        if (ref.current && !ref.current.contains(event.target)) {
-          setIsOpen(false);
-        }
+  useEffect(() => {
+    // Function for click event
+    function handleOutsideClick(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsOpen(false);
       }
+    }
 
-      // Adding click event listener
-      document.addEventListener("click", handleOutsideClick);
-      return () => document.removeEventListener("click", handleOutsideClick);
-    }, [ref]);
-  }
-
-  desktopMenuHandler(ref);
+    // Adding click event listener
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [ref]);
 
   //Mobile menu handler
   const [isOpenOnMobile, setIsOpenOnMobile] = useState(false);
@@ -53,22 +49,18 @@ const Header = () => {
 
   const mobRef = useRef(null);
 
-  function mobileMenuHandler(ref) {
-    useEffect(() => {
-      // Function for click event
-      function handleOutsideClick(event) {
-        if (ref.current && !ref.current.contains(event.target)) {
-          setIsOpenOnMobile(false);
-        }
+  useEffect(() => {
+    // Function for click event
+    function handleOutsideClick(event) {
+      if (mobRef.current && !mobRef.current.contains(event.target)) {
+        setIsOpenOnMobile(false);
       }
+    }
 
-      // Adding click event listener
-      document.addEventListener("click", handleOutsideClick);
-      return () => document.removeEventListener("click", handleOutsideClick);
-    }, [ref]);
-  }
-
-  mobileMenuHandler(mobRef);
+    // Adding click event listener
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [mobRef]);
 
   //Logo's
   const Logo_Content = [
@@ -633,6 +625,7 @@ const Header = () => {
                         src={item.img}
                         layout="fill"
                         objectFit="contain"
+                        alt="image"
                         priority
                       />
                     </Box>
